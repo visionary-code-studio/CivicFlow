@@ -126,6 +126,7 @@ function AssistantUI() {
 
   useEffect(() => {
     if (initialQ && !sent) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSent(true);
       sendMessage(initialQ);
     }

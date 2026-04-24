@@ -5,11 +5,12 @@ import { checklistGroups, allItems } from "@/lib/data/checklist";
 const STORAGE_KEY = "civicflow_checklist";
 
 export default function ChecklistPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params);
+  use(params);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     try {
       const saved = localStorage.getItem(STORAGE_KEY);

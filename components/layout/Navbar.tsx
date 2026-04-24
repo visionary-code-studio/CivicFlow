@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Navbar({ locale, dict }: { locale: string; dict: any }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Navbar({ locale, dict }: { locale: string; dict: any }) 
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpen(false);
   }, [pathname]);
 

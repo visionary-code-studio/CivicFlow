@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { timelineStages } from "@/lib/data/timeline";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

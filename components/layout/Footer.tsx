@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Footer({ locale, dict }: { locale: string; dict: any }) {
   const year = new Date().getFullYear();
 
@@ -92,7 +93,10 @@ export default function Footer({ locale, dict }: { locale: string; dict: any }) 
           className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 mt-12 border-t text-xs"
           style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
         >
-          <p>© {year} CivicFlow. Built for civic education, not partisan purposes.</p>
+          <div className="flex flex-col gap-1">
+            <p>© {year} CivicFlow. Built for civic education, not partisan purposes.</p>
+            <p style={{ color: "var(--text-primary)", fontWeight: "500" }}>Powered by Vaibhav Shaw & Visionary_Coders Co.</p>
+          </div>
           <p>
             Content is informational only.{" "}
             <span style={{ color: "var(--warning)" }}>

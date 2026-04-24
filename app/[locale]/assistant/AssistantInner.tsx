@@ -86,6 +86,7 @@ function AssistantUI() {
   }, [messages, loading]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (initialQ && !sent) { setSent(true); sendMessage(initialQ); }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

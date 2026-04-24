@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import NewsSearch from "@/components/resources/NewsSearch";
 
 export const metadata: Metadata = {
   title: "Official Election Resources — CivicFlow",
@@ -141,6 +142,9 @@ export default async function ResourcesPage({ params }: { params: Promise<{ loca
             ⚠️ <strong>Important:</strong> Always verify election rules with your official national election authority. Rules change. CivicFlow is an educational guide only.
           </p>
         </div>
+
+        {/* Live News Search */}
+        <NewsSearch />
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
           {countries.map((country) => (

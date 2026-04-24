@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function MobileBottomNav({ locale, dict }: { locale: string; dict: any }) {
   const pathname = usePathname();
 

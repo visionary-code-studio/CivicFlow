@@ -46,7 +46,7 @@ function GlossaryCard({ term }: { term: GlossaryTerm }) {
 }
 
 export default function GlossaryPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params);
+  use(params);
   const [query, setQuery] = useState("");
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
 
