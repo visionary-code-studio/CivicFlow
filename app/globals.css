@@ -297,14 +297,26 @@ a { text-decoration: none; color: inherit; }
 
 /* Glass */
 .glass {
-  background: rgba(255, 254, 249, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(231, 229, 225, 0.8);
+  background: rgba(255, 254, 249, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(231, 229, 225, 0.5);
 }
 .dark .glass {
-  background: rgba(26, 26, 26, 0.85);
-  border-bottom: 1px solid rgba(63, 63, 70, 0.8);
+  background: rgba(26, 26, 26, 0.7);
+  border-bottom: 1px solid rgba(63, 63, 70, 0.5);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Timeline rail */
@@ -368,7 +380,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ===== MOBILE BOTTOM NAV SPACING ===== */
 @media (max-width: 768px) {
-  main { padding-bottom: 80px; }
+  body { padding-bottom: 84px; }
 }
 
 /* ===== FOCUS VISIBLE ===== */

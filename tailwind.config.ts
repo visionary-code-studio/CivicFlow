@@ -40,21 +40,25 @@ const config: Config = {
         "3xl": "28px",
       },
       boxShadow: {
-        "civic-sm": "0 1px 3px rgba(28, 25, 23, 0.08)",
-        "civic-md": "0 4px 16px rgba(28, 25, 23, 0.10)",
-        "civic-lg": "0 8px 32px rgba(28, 25, 23, 0.12)",
-        "civic-xl": "0 16px 48px rgba(28, 25, 23, 0.14)",
-        "accent": "0 4px 16px rgba(217, 119, 6, 0.30)",
+        "civic-sm": "0 2px 4px rgba(0,0,0,0.05)",
+        "civic-md": "0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)",
+        "civic-lg": "0 20px 40px -12px rgba(0,0,0,0.15)",
+        "civic-xl": "0 25px 50px -12px rgba(0,0,0,0.25)",
+        "accent": "0 10px 15px -3px rgba(217, 119, 6, 0.2)",
+      },
+      lineHeight: {
+        "tight": "1.15",
+        "relaxed": "1.65",
       },
       animation: {
-        "fade-in-up": "fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both",
+        "fade-in-up": "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
         "fade-in": "fadeIn 0.5s ease both",
         "pulse-dot": "pulse-dot 2s ease-in-out infinite",
         "shimmer": "shimmer 2s linear infinite",
       },
       keyframes: {
         fadeInUp: {
-          from: { opacity: "0", transform: "translateY(24px)" },
+          from: { opacity: "0", transform: "translateY(30px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         fadeIn: {

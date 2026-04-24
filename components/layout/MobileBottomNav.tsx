@@ -64,11 +64,11 @@ export default function MobileBottomNav({ locale, dict }: { locale: string; dict
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 glass border-t lg:hidden"
+      className="fixed bottom-0 left-0 right-0 z-50 glass border-t lg:hidden pb-safe"
       style={{ borderColor: "var(--border)" }}
       aria-label="Mobile bottom navigation"
     >
-      <div className="flex items-stretch">
+      <div className="flex items-stretch justify-around px-2">
         {tabs.map((tab) => {
           const isActive = tab.href === `/${locale}`
             ? pathname === `/${locale}` || pathname === `/${locale}/`
@@ -77,17 +77,28 @@ export default function MobileBottomNav({ locale, dict }: { locale: string; dict
             <Link
               key={tab.href}
               href={tab.href}
-              className="flex-1 flex flex-col items-center justify-center gap-1 py-3 text-xs font-medium transition-all"
+              className="flex-1 flex flex-col items-center justify-center gap-1.5 py-4 transition-all duration-300 relative"
               style={{
                 color: isActive ? "var(--accent)" : "var(--text-muted)",
-                borderTop: isActive ? "2px solid var(--accent)" : "2px solid transparent",
-                background: isActive ? "var(--accent-light)" : "transparent",
               }}
               aria-current={isActive ? "page" : undefined}
               aria-label={tab.label}
             >
-              <span aria-hidden="true">{tab.icon}</span>
-              <span>{tab.label}</span>
+              {isActive && (
+                <div 
+                  className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-b-full bg-amber-500 animate-fade-in" 
+                  aria-hidden="true"
+                />
+              )}
+              <span 
+                className={`transition-transform duration-300 ${isActive ? "scale-110" : ""}`} 
+                aria-hidden="true"
+              >
+                {tab.icon}
+              </span>
+              <span className={`text-[10px] font-bold tracking-tight ${isActive ? "opacity-100" : "opacity-70"}`}>
+                {tab.label}
+              </span>
             </Link>
           );
         })}

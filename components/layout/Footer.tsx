@@ -30,7 +30,7 @@ export default function Footer({ locale, dict }: { locale: string; dict: any }) 
       style={{ background: "var(--bg-sand)", borderColor: "var(--border)" }}
       role="contentinfo"
     >
-      <div className="container-civic py-16">
+      <div className="container-civic py-16 pb-32 md:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">

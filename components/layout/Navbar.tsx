@@ -94,76 +94,13 @@ export default function Navbar({ locale, dict }: { locale: string; dict: any }) 
             )}
           </div>
 
-          {/* Mobile hamburger & toggles */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Mobile toggles (No Hamburger) */}
+          <div className="flex items-center gap-3 lg:hidden">
             <LanguageSwitcher currentLocale={locale} />
             <ThemeToggle />
-            <button
-              className="btn-ghost"
-              onClick={() => setOpen(!open)}
-              aria-label={open ? "Close menu" : "Open menu"}
-              aria-expanded={open}
-              aria-controls="mobile-menu"
-            >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              {open ? (
-                <>
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </>
-              ) : (
-                <>
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </>
-              )}
-            </svg>
-          </button>
           </div>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden glass border-t"
-          style={{ borderColor: "var(--border)" }}
-          role="navigation"
-          aria-label="Mobile navigation"
-        >
-          <div className="container-civic py-4 flex flex-col gap-1">
-            {navLinks.map((link) => {
-              const isActive = link.href === `/${locale}` 
-                ? pathname === `/${locale}` || pathname === `/${locale}/`
-                : pathname?.startsWith(link.href);
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                    isActive
-                      ? "font-semibold"
-                      : "text-secondary hover:bg-sand"
-                  }`}
-                  style={isActive ? { color: "var(--accent)", background: "var(--accent-light)" } : {}}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-            {pathname !== `/${locale}/assistant` && (
-              <div className="pt-2 border-t" style={{ borderColor: "var(--border)" }}>
-                <Link href={`/${locale}/assistant`} className="btn-primary w-full justify-center mt-2">
-                  {dict.askAssistant}
-                </Link>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </header>
   );
 }
